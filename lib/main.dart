@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:splashscreen/splashscreen.dart';
+import 'package:splash_screen_view/SplashScreenView.dart';
 
 import 'homescreen.dart';
 
@@ -15,23 +15,19 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SplashScreen(
-        seconds: 3,
-        navigateAfterSeconds: HomeScreen(),
-        title: Text(
-          'Welcome to\nColor Swap App',
-          style: TextStyle(
-            fontSize: 30.0,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-          textDirection: TextDirection.ltr,
-          textAlign: TextAlign.center,
-        ),
-        image: Image.asset('Assets/logo.png'),
-        backgroundColor: Colors.cyan,
-        styleTextUnderTheLoader: TextStyle(),
-        photoSize: 150.0,
-        loaderColor: Colors.white);
+    return SplashScreenView(
+      navigateRoute: HomeScreen(),
+      duration: 3000,
+      imageSize: 150,
+      imageSrc: 'Assets/logo.png',
+      text: 'Welcome to\nColor Swap App',
+      textType: TextType.NormalText,
+      textStyle: TextStyle(
+        fontSize: 30.0,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
+      backgroundColor: Colors.cyan,
+    );
   }
 }

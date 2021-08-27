@@ -60,13 +60,15 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                AutoSizeText(
-                  "Red = $red, Green = $green, Blue = $blue",
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    color: Color.fromRGBO(red, green, blue, 1),
+                Expanded(
+                  child: AutoSizeText(
+                    "Red = $red, Green = $green, Blue = $blue",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      color: Color.fromRGBO(red, green, blue, 1),
+                    ),
+                    maxLines: 1,
                   ),
-                  maxLines: 1,
                 ),
               ],
             ),
